@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
-
+    add_flash_types :success, :error, :warning, :info
+    include ApplicationHelper
+    
     def redirect_if_not_logged_in
         redirect_to signup_path if !logged_in?
     end

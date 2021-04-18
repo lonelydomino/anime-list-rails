@@ -10,18 +10,15 @@ class ShowsController < ApplicationController
         @list = List.find(params["list_id"])
         @list.shows.each do |show|
             if show.name == @new_show.name
-                # flash[:error] = "Anime already in list!"
-                # byebug
-                redirect_to show_path(id: params[:show_id])
+                redirect_to show_path(id: params[:show_id]), error: "Anime already in list!"
                 return false
             end
         end
         if @list.save
-            # byebug
             @list.shows << @new_show
-            redirect_to user_list_path(id: params["list_id"], user_id: current_user.id)
+            redirect_to user_list_path(id: params["list_id"], user_id: current_user.id), success: "Anime already in list!"
         else
-            redirect_to show_path(id: params[:show_id])
+            redirect_to show_path(id: params[:show_id]), error: "Failed to add show!"
          end
     end
 

@@ -28,12 +28,10 @@
     <% end %>
 </header>
 
-<% if flash[:error] %>
-  <div id="alert">
-    <span class="closebtn">&times;</span>   
-    <p><%= flash[:error] %></p>
-  </div>
-<% end %>
+
+<%= render "pages/errors" %>
+
+
 
 
 

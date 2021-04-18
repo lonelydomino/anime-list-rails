@@ -11,10 +11,12 @@ class ListsController < ApplicationController
     end
 
     def create
-        if List.create(list_params)
-            redirect_to user_lists_path
+        new_list = List.new(list_params)
+        if new_list.save
+            redirect_to user_lists_path, success: "List created!"
+            return false
         else
-            render :new
+            redirect_to new_user_list_path, error: new_list.errors.full_messages.to_sentence
         end
     end
 

@@ -1,0 +1,17 @@
+ <br><br><br><br>
+
+ <div class="flash-message"> 
+    <% flash.each do |type, msg| %>
+        <% if type == 'error' %>
+            <div class="alert">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> <br><br>
+                <strong>Error!</strong> <%= msg %>
+            </div>
+        <% elsif type == 'success'%>
+            <div class="success">
+                <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> <br><br>
+                <strong>Success!</strong> <%= msg %>
+            </div>
+        <% end %>
+    <% end %>
+ </div>
