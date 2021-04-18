@@ -1,0 +1,40 @@
+
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Open+Sans" rel="stylesheet">
+</head>
+
+<header id="layoutheader">
+<a id="banner-anchor" href="/"><%= image_tag("doge2.jpeg", id: "doge", alt: "doge2.png", width: "5%") %></a> 
+<h1 class="h-1"><a id="banner-anchor" href="/">Anime <span class="layoutspan">List</span></a></h1>
+    <% if logged_in? %>
+        <nav> 
+            <ul id="layout-ul">
+                <li> <%= link_to "Search", searches_path %></li>
+                <li><a id="layout-a" href="/"> Home</a></li>
+                <li><%= link_to "Lists", user_lists_path(current_user), id: "layout-a" %></li>
+                 <li><a id="layout-a" href="#">About</a></li>  
+                <li><%= link_to "Log out", logout_path, id: "layout-a" %></li>
+            </ul>
+        </nav>
+    <% end %>
+    <% if !logged_in? %>
+        <nav> 
+            <ul id="layout-ul">
+                <li><a id="layout-a" href="/login"> Login</a></li>
+                <li><a id="layout-a" href="/signup"> Sign Up</a></li>
+                 <li><a id="layout-a" href="#">About</a></li>
+            </ul>
+        </nav>
+    <% end %>
+</header>
+
+<% if flash[:error] %>
+  <div id="alert">
+    <span class="closebtn">&times;</span>   
+    <p><%= flash[:error] %></p>
+  </div>
+<% end %>
+
+
+
+

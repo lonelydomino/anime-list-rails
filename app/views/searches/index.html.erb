@@ -1,0 +1,20 @@
+
+
+
+<body class="searches-body">
+    <div id="cover">
+        <%= form_with(url: '/results', method: :get, class: "search-form") do |f|%>
+                <div class="tb">
+                    <div class="td">
+                        <%= f.text_field :search, placeholder: "Search", required: "", autocomplete: "off" %>
+                    </div>
+                    <div class="td" id="s-cover">
+                        <button type="submit">
+                            <div id="s-circle"></div>
+                            <span></span>
+                        </button>
+                    </div>
+                </div>
+        <% end %>
+    </div>
+</body>

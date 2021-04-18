@@ -1,0 +1,31 @@
+
+<body class="lists-body">
+    <div id="content">
+        <h1 id="header-1"> Edit a list! </h1>
+
+        <div class="formstyle">
+            <%= form_with(model: @list, url: user_list_path) do |f| %>
+                <%= f.hidden_field :user_id %>
+                <%= f.label :name %>
+                <%= f.text_field :name, id: "name", autocomplete: "off" %>
+                <%= f.label "Description" %>
+                <%= f.text_field :desc, id: "desc", autocomplete: "off" %>
+                <%= f.submit "Submit", class: "list-submit" %>
+            <% end %>
+               <%= button_to "Back" %>
+        </div>
+    </div>
+</body>
+
+<script>
+var close = document.getElementsByClassName("closebtn");
+var i;
+
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    var div = this.parentElement;
+    div.style.opacity = "0";
+    setTimeout(function(){ div.style.display = "none"; }, 600);
+  }
+}
+</script>

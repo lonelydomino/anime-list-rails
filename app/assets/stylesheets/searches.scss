@@ -1,0 +1,365 @@
+// Place all the styles related to the searches controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.searches-body {
+	background: url("japannight.png") no-repeat center center fixed;
+	font-family: tahoma, sans-serif;
+	color: #E6EBEE;
+    background-size: auto; 
+    background-size: 100% 100%;
+    
+  
+}
+
+
+  *
+  {
+      position: sticky;
+      outline: none;
+  }
+  
+  html, body
+  {
+      height: 100%;
+      min-height: 100%;
+  }
+  
+  body
+  {
+      margin: 0;
+  }
+  
+  .tb
+  {
+      display: table;
+      width: 100%;
+  }
+  
+  .td
+  {
+      display: table-cell;
+      vertical-align: middle;
+  }
+  
+  .searches-body input, button
+  {
+      color: #fff;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      background-color: transparent;
+  }
+  
+  #cover
+  {
+      position: fixed;
+      top: 30%;
+      left: 0;
+      right: 0;
+      width: 950px;
+      padding: 35px;
+      margin: 83px auto 0 auto;
+      background-color: #253b79;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px #004949, 0 0 0 20px #16004beb;
+      transform: scale(0.6);
+  }
+  
+  .search-form
+  {
+      height: 96px;
+  }
+  
+  .searches-body input[type="text"]
+  {
+      width: 100%;
+      height: 96px;
+      font-size: 60px;
+      line-height: 1;
+  }
+  
+  .searches-body input[type="text"]::placeholder
+  {
+      color: #ffffff;
+  }
+  
+  #s-cover
+  {
+      width: 1px;
+      padding-left: 35px;
+  }
+  
+  .searches-body button
+  {
+      position: relative;
+      display: block;
+      width: 84px;  
+      height: 96px;
+      cursor: pointer;
+  }
+  
+  #s-circle
+  {
+      position: relative;
+      top: -8px;
+      left: 0;
+      width: 43px;
+      height: 43px;
+      margin-top: 0;
+      border-width: 15px;
+      border: 15px solid #fff;
+      background-color: transparent;
+      border-radius: 50%;
+      transition: 0.5s ease all;
+  }
+  
+  .searches-body button span
+  {
+      position: absolute;
+      top: 68px;
+      left: 43px;
+      display: block;
+      width: 45px;
+      height: 15px;
+      background-color: transparent;
+      border-radius: 10px;
+      transform: rotateZ(52deg);
+      transition: 0.5s ease all;
+  }
+  
+  .searches-body button span:before, button span:after
+  {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 45px;
+      height: 15px;
+      background-color: #fff;
+      border-radius: 10px;
+      transform: rotateZ(0);
+      transition: 0.5s ease all;
+  }
+  
+  #s-cover:hover #s-circle
+  {
+      top: -1px;
+      width: 67px;
+      height: 15px;
+      border-width: 0;
+      background-color: #fff;
+      border-radius: 20px;
+  }
+  
+  #s-cover:hover span
+  {
+      top: 50%;
+      left: 56px;
+      width: 25px;
+      margin-top: -9px;
+      transform: rotateZ(0);
+  }
+  
+  #s-cover:hover button span:before
+  {
+      bottom: 11px;
+      transform: rotateZ(52deg);
+  }
+  
+  #s-cover:hover button span:after
+  {
+      bottom: -11px;
+      transform: rotateZ(-52deg);
+  }
+  #s-cover:hover button span:before, #s-cover:hover button span:after
+  {
+      right: -6px;
+      width: 40px;
+      background-color: #fff;
+  }
+  
+  #ytd-url {
+    display: block;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    padding: 10px 14px;
+    margin: 20px;
+    color: #fff;
+    font-family: Nunito;
+    font-size: 14px;
+    text-decoration: none;
+    background-color: #ff7575;
+    border-radius: 4px;
+    box-shadow: 0 10px 20px -5px rgba(255, 117, 117, 0.86);
+    z-index: 125;
+  }
+////////////////////////////
+//results
+///////////////////////////
+
+
+    .results-body{
+        background: url(https://images.pexels.com/photos/590478/pexels-photo-590478.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260) no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover; 
+        background-size: 100% 100%;
+    }
+
+.tilesWrap {
+	padding: 100;
+	margin: 50px auto;
+	list-style: none;
+	max-width: 90%;
+    float: right;
+
+	margin-right: 100px	;
+}
+.tilesWrap li {
+	display: inline-block;
+	width: 20%;
+	min-width: 270px;
+	max-width: 270px;
+	padding: 80px 20px 40px;
+	position: relative;
+	vertical-align: top;
+	margin: 10px;
+	font-family: 'helvetica', san-serif;
+	min-height: 65vh;
+	max-height: 65vh;
+	background: #262a2b;
+	border: 1px solid #252727;
+	text-align: left;
+}
+.tilesWrap li h2 {
+	font-size: 14px;
+	margin: 0;
+	position: absolute;
+	opacity: 0.2;
+	top: 50px;
+	right: 10px;
+    color: white;
+	transition: all 0.3s ease-in-out;
+}
+.tilesWrap li h3 {
+	font-size: 20px;
+	color: #b7b7b7;
+	margin-bottom: 5px;
+}
+.tilesWrap li p {
+	font-size: 16px;
+	line-height: 18px;
+	color: #b7b7b7;
+	margin-top: 5px;
+}
+.tilesWrap li button {
+	background: transparent;
+	border: 1px solid #b7b7b7;
+	padding: 10px 20px;
+	color: #b7b7b7;
+	border-radius: 3px;
+	position: relative;
+	transition: all 0.3s ease-in-out;
+	transform: translateY(-40px);
+	opacity: 0;
+	cursor: pointer;
+	overflow: hidden;
+}
+.tilesWrap li button:before {
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 120%;
+	background: #b7b7b7;
+	top: 0;
+	opacity: 0;
+	left: -140px;
+	border-radius: 0 20px 20px 0;
+	z-index: -1;
+	transition: all 0.3s ease-in-out;
+	
+}
+.tilesWrap li:hover button {
+	transform: translateY(5px);
+	opacity: 1;
+}
+.tilesWrap li button:hover {
+	color: #262a2b;
+}
+.tilesWrap li button:hover:before {
+	left: 0;
+	opacity: 1;
+}
+.tilesWrap li:hover h2 {
+	top: 0px;
+	opacity: 0.6;
+}
+
+.tilesWrap li:before {
+	content: '';
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	right: -2px;
+	bottom: -2px;
+	z-index: -1;
+	background: #fff;
+	transform: skew(2deg, 2deg);
+}
+.tilesWrap li:after {
+	content: '';
+	
+	width: 40%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(255, 255, 255, 0.02);
+}
+.tilesWrap li:nth-child(even):before {
+	background: #C9FFBF;
+background: -webkit-linear-gradient(to right, #FFAFBD, #C9FFBF);
+background: linear-gradient(to right, #FFAFBD, #C9FFBF);
+}
+.tilesWrap li:nth-child(2):before {
+	background: #f2709c;
+background: -webkit-linear-gradient(to right, #ff9472, #f2709c);
+background: linear-gradient(to right, #ff9472, #f2709c);
+}
+.tilesWrap li:nth-child(3):before {
+	background: #c21500;
+background: -webkit-linear-gradient(to right, #ffc500, #c21500);
+background: linear-gradient(to right, #ffc500, #c21500);
+}
+.tilesWrap li:nth-child(odd):before {
+	background: #FC354C;
+background: -webkit-linear-gradient(to right, #0ABFBC, #FC354C);
+background: linear-gradient(to right, #0ABFBC, #FC354C);
+}
+
+
+
+
+#results_anchor {
+	text-decoration:  none;
+	color: white;
+}
+#no-results {
+	position: fixed;
+	top: 42%;
+    text-align: center;
+	left: 42%;
+	font-size: 30px;
+	color: white;
+	font-weight: bold;
+	background-color: rgb(0, 0, 0);
+	border-radius: 15px;
+	padding: 10px 10px;
+
+}
+
+
+.a-img {
+	max-width: 100%;
+}

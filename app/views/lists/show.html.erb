@@ -1,0 +1,62 @@
+
+<body class="lists-body">
+
+<div id="main-container">
+<h1><%= @list.name%></h1>
+  <% if !@list.shows.empty? %>
+  <table id="list-data">
+    <tr>
+      <th id="th-name">Name</th>
+      <th id="delete-col"></th>
+    </tr>
+  <% @list.shows.each do |c| %>
+    <tr>
+      <td><a class="arow" href="/shows/<%= c.api_id%>"><%= c.name %></a></td>
+      <td><%= link_to "X", show_path(show_id: c.id, list_id: @list.id), method: "delete", class: "delete-button" %></td>
+    </tr>   
+  <% end %>
+  </table>
+<% else %>
+    <br><br><br><br><br><br>
+    <p id="p1"> No anime data! </p>
+<% end %>
+
+
+<br><br><br><br>    
+      
+<div id="container1">
+  <br>
+<% if !@list.shows.empty?%>
+  <div class="button" id="button-3">
+    <div id="circle"></div>
+    <a href="/lists/<%= @list.id %>/edit">Edit</a>
+  </div>
+  <% end %>
+  <br>
+  <div class="button" id="button-3">
+    <div id="circle"></div>
+        <%= button_to("Delete", user_list_path, method: "delete")  %>
+       
+  </div>
+  <br>
+<%= link_to edit_user_list_path do%>
+   <div class="button" id="button-3">
+      <div id="circle"></div>
+      Edit
+       
+    </div>
+<% end %>
+<br>
+<a>
+   <div class="button" id="button-3">
+      <div id="circle"></div>
+        <form>
+          <input type="button" value="Go back!" onclick="history.back()">
+        </form>
+    </div>
+</a>
+  <br>
+  </div>
+  </div>
+  
+</div>

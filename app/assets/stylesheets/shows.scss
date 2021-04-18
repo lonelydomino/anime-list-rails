@@ -1,0 +1,184 @@
+// Place all the styles related to the shows controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+
+//////anime show page
+
+
+body {
+    background-color: #1b262c;
+    font-family: verdana;
+    color: #ffffff;
+    text-align: center;
+  }
+
+
+
+.dropbtn {
+    background-color: black;
+    color: white;
+    padding: 10px 85px 10px 82px;
+    font-size: 16px;
+    border: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: lightgrey;
+    min-width: 200px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: white;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color: grey;}
+
+/* Create three equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 40%;
+    padding: 50px 0px 0px 0px;
+  }
+  #c2 {
+      padding: 120px 20px 20px 20px;
+  }
+  #title-h {
+      text-align: left;
+      padding: 101px 10px 101px 10px;
+      
+  } 
+  #title-h1-span {
+    color: grey;
+  }
+  /* BUTTON */
+  .button {
+    display: inline-flex;
+    height: 40px;
+    width: 150px;
+    border: none;
+    margin: 20px 20px 20px 20px;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: Helvetica, sans-serif;
+    letter-spacing: 1.5px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 20px;
+    font-weight: 500;
+    letter-spacing: 0.2px;  
+    font-size: 20px;
+    background-color: #4069E2;
+  }
+  a {
+    color: #ffffff;
+    text-decoration: none;
+    
+  }
+  #button-3 {
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  #button-3 a {
+    position: relative;
+    transition: all .45s ease-Out;
+  }
+  #button-3 input {
+    position: relative;
+    transition: all .45s ease-Out;
+  }
+
+  input[type=button] {
+    padding: 5px 15px;
+    background-color: Transparent;
+    border: 0 none;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;   
+    font-weight: 500;
+    letter-spacing: 0.2px;  
+    font-size: 20px; 
+ }
+
+   
+ #circle {
+    width: 0%;
+    height: 0%;
+    opacity: 0;
+    line-height: 40px;
+    border-radius: 50%;
+    background: #103483;
+    position: absolute;
+    transition: all .5s ease-Out;
+    top: 20px;
+    left: 70px;
+  }
+
+  
+  #button-3:hover #circle {
+    width: 200%;
+    height: 500%;
+    opacity: 1;
+    top: -70px;
+    left: -70px;
+  }
+  
+  #button-3:hover a {
+    color: #dfdfdf;
+  }
+  #button-3:hover input {
+    color: #c5c5c5;
+  }
+
+  #row2 {
+      display:inline-flex;
+      text-align: justify;
+  }
+
+
+#alert {
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    opacity: 1;
+    transition: opacity 0.6s;
+    text-align: center;
+    z-index: 200;
+    width: 100%;
+    position:fixed;  
+    top:112px;
+  }
+  .closebtn {
+    margin-left: 0px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: fixed;
+    margin-left: 111px;
+    margin-top: 15px;
+  }
+  
+  .closebtn:hover {
+    color: black;
+  }
+  

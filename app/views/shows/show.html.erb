@@ -1,0 +1,43 @@
+
+<div class="row">
+    <div class="column" id="c1">
+      <p><img src="<%= @details["image"] %>" alt="<%= @details["name"] %>_image"></p>
+    </div> 
+    <div class="column" id="c2">
+        <h1><%= @details["title"] %> </h1>
+        <p>
+            <h4 id="title-h"><span id="title-h1-span">  <b> Description </b></span> <br><%= @details["desc"] %></h4>
+        </p>
+        <div id="row2">
+            <h4>Add to list:
+                    <div class="dropdown">
+                        <button class="dropbtn">Lists </button>
+                        <div class="dropdown-content">
+                            <% current_user.lists.each do |list| %>
+                                <%= link_to list.name, show_add_path(:list_id => list.id, :show_id => @details["id"] ) %>
+                            <% end %>
+                        </div>
+                    </div> 
+            </h4>
+            <div class="button" id="button-3">
+                <div id="circle"></div>
+                    <form>
+                        <input type="button" value="Go back!" onclick="history.back()">
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br><br>
+<script>
+var close = document.getElementsByClassName("closebtn");
+var i;
+
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    var div = this.parentElement;
+    div.style.opacity = "0";
+    setTimeout(function(){ div.style.display = "none"; }, 600);
+  }
+}
+</script>

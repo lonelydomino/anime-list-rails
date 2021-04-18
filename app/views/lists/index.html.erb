@@ -1,0 +1,36 @@
+<h1 id="h1lists">My lists</h1><br><br>
+<body class="lists-body">
+
+   <section id="list-listing">
+      <p class="lists-pt">
+        <% if !@lists.empty? %>
+          <table id="list-data">
+          <tr id="td-header">
+            <th id="th-1">Name</th>
+            <th id="th-2">Description</th>
+          </tr>
+          <% @lists.each do |c| %>
+              <tr>
+                <td><%= link_to c.name, user_list_path(id: c.id), id: "table-anchor" %></td>
+                <td><%= c.desc %></td>
+              </tr>
+          <% end %>
+          </table>
+        <% else %>
+          <p id="p1"><br><br><br><br> No list data!<br> </p>
+        <% end %>
+      </p>
+    </section>
+    <br><br><br><br>
+
+<div id="container">
+<%= link_to new_user_list_path, id: "button-anchor" do %>
+
+    <div class="button1" id="button-3">
+      <div id="circle"></div>
+     <p id="button-text"> Create List</p>
+    </div>
+<% end %>
+</div>
+
+</body>

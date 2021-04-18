@@ -1,0 +1,38 @@
+<head>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+</head>
+<body class="results-body">
+<ul class="tilesWrap">
+<% if !@data.empty? %>
+<br><br>
+    <% @data.each do |d| %> 
+        <li>
+            <% @image = d["attributes"]["posterImage"]["small"] %>
+			<% @title = d["attributes"]["canonicalTitle"] %> 
+			<% @rating = d["attributes"]["averageRating"] %> 
+			<% @episode_count = d["attributes"]["episodeCount"] %> 
+			<% @id = d["id"] %> 
+            <img class="a-img" src="<%= @image %>" alt="<%= @title %>_image">
+			
+            <br><br><br> 
+            <h2><%= @title %>  </h2>
+		    <h3><%= @title %>   </h3>
+            <p>
+			Rating: <%= @rating %> / 100 <br>
+			Episode count: <%= @episode_count%> 
+			</p> 
+            <%= link_to show_path(@id), id: "results_anchor" do %>
+                <%= button_to "Details" %>
+            <% end %>
+        
+			
+        </li>
+    <% end %> 
+</ul>
+	<% else %>
+	<div id="no-results">  No results found! </div>
+		
+	<% end %>
+
+
+</body>

@@ -1,0 +1,47 @@
+
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
+
+<body class="signup-body">
+    <div class="testbox">
+        <h1>Registration</h1>
+
+        <%= form_for @user, html: {class: "signup-form", autocomplete: "off"} do |f| %>
+        <hr><hr>
+      
+        <%= f.label :email, id: "icon" do%>
+            <i class="icon-envelope "></i>
+        <% end %>
+        <%= f.email_field :email, placeholder: "Email", required: ""  %>  <br>
+
+        <%= f.label :username, id: "icon" do%>
+            <i class="icon-user "></i>
+        <% end %>
+        <%= f.text_field :username, placeholder: "Username", required: ""  %>  <br>
+
+        <%= f.label :name, id: "icon" do%>
+            <i class="icon-shield "></i>
+        <% end %>
+        <%= f.password_field :password, placeholder: "Password", required: "" %>
+        <%= f.submit "Register", class: "button"  %>
+        <% end %>
+
+       
+    </div>
+</body>
+
+
+<script>
+var close = document.getElementsByClassName("closebtn");
+var i;
+
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function(){
+    var div = this.parentElement;
+    div.style.opacity = "0";
+    setTimeout(function(){ div.style.display = "none"; }, 600);
+  }
+}
+</script>
